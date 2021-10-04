@@ -1,0 +1,22 @@
+{
+  "name": "api-testing",
+  "version": "1.0.0",
+  "description": "TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.",
+  "main": "index.js",
+  "scripts": {
+    "api-test":"newman run 'API/Xapiens-API.json' --reporters cli,junit,htmlextra,json --reporter-junit-export 'API/report/report.xml' --reporter-htmlextra-export 'API/report/report.html' --reporter-json-export 'API/report/report.json'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://NoviantoNugroho0683@dev.azure.com/NoviantoNugroho0683/QA/_git/API-Testing"
+  },
+  "keywords": [],
+  "author": "Novianto Nugroho",
+  "license": "ISC",
+  "dependencies": {
+    "newman": "^5.2.2",
+    "newman-reporter-html": "^1.0.5",
+    "newman-reporter-htmlextra": "^1.20.3",
+    "newman-reporter-json-summary": "^1.0.14"
+  }
+}

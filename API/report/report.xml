@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="1-Testing" tests="1" time="1.165">
+  <testsuite name="GET vehicles" id="fc0c48bb-b722-4cf1-9e6f-cac79ad7463f" timestamp="2021-10-04T07:59:05.235Z" tests="4" failures="0" errors="0" time="1.165">
+    <testcase name="Status code is 200" time="1.165" classname="1Testing"/>
+    <testcase name="Test attribute data Body)" time="1.165" classname="1Testing"/>
+    <testcase name="Test type data Body (id, name, description, vehicle_class, length, pilot, films &amp; url)" time="1.165" classname="1Testing"/>
+    <testcase name="Test response data Body" time="1.165" classname="1Testing"/>
+  </testsuite>
+</testsuites>
