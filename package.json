@@ -4,7 +4,7 @@
   "description": "TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.",
   "main": "index.js",
   "scripts": {
-    "api-test":"newman run 'API/Xapiens-API.json' --reporters cli,junit,htmlextra,json --reporter-junit-export 'API/report/report.xml' --reporter-htmlextra-export 'API/report/report.html' --reporter-json-export 'API/report/report.json'"
+    "api-test": "newman run API/interport-api.json --reporters cli,junit,htmlextra,json --reporter-junit-export API/report/report.xml --reporter-htmlextra-export API/report/report.html --reporter-json-export API/report/report.json"
   },
   "repository": {
     "type": "git",

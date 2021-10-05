@@ -1,0 +1,699 @@
+{
+	"info": {
+		"_postman_id": "0c437cd7-b747-4724-93a3-eeaf1b46a169",
+		"name": "LINTAS SR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "sr-column",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 20000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(20000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "user",
+						"value": "{\"ID\":446,\"UserTypeID\":1,\"RoleID\":31,\"Name\":\"QA Test Account\",\"Email\":\"QA.TestAcc@xapiens.id\",\"Address\":\"Jakarta\",\"Phone\":\"082111\",\"Password\":\"\",\"Company\":\"PT Xapiens Teknologi Indonesia\",\"Title\":\"Control Room/Planner\",\"Status\":\"ACTIVE\",\"IsActive\":true,\"BusinessPartnerID\":0,\"CreatedBy\":285,\"CreatedAt\":\"2021-07-14T02:56:21.17464Z\",\"ModifiedBy\":1,\"UpdatedAt\":\"2021-08-10T02:02:38.016892Z\",\"CompanyID\":0,\"SupplierNo\":\"\",\"UserTypeCode\":\"Internal\",\"RoleCode\":\"\",\"RowNo\":0,\"UserLocations\":null,\"CompanySapCustomerNo\":\"\",\"UserCompany\":{\"ID\":0,\"Label\":\"\"}}",
+						"type": "text"
+					},
+					{
+						"key": "email",
+						"value": "QA.TestAcc@xapiens.id",
+						"type": "text"
+					},
+					{
+						"key": "location",
+						"value": "[{\"id\":4,\"description\":\"Marunda\"},{\"id\":5,\"description\":\"Balikpapan\"},{\"id\":6,\"description\":\"Kariangau\"},{\"id\":7,\"description\":\"Sorong\"},{\"id\":8,\"description\":\"Surabaya\"},{\"id\":3,\"description\":\"Gresik\"}]",
+						"type": "text"
+					},
+					{
+						"key": "token-auth",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Imwzc1EtNTBjQ0g0eEJWWkxIVEd3blNSNzY4MCJ9.eyJhdWQiOiIwZTIyZGFiMC04ZDAzLTQ4YjUtODhiNS1jZmU3ZTU4MWYxYTkiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYWM2ZDQ1NDYtN2QxZS00OGM3LWIwNGUtMGNjMzgzMThhZWM4L3YyLjAiLCJpYXQiOjE2MzMzMzkxNzQsIm5iZiI6MTYzMzMzOTE3NCwiZXhwIjoxNjMzMzQzMDc0LCJuYW1lIjoiUUEgVGVzdCBBY2NvdW50Iiwibm9uY2UiOiI4ZWFkZTEyNi1kZWU0LTQyNDctOGU2NC0yZDgwMWI0ZjU1YWEiLCJvaWQiOiI1Mjk3NTc3Mi00NjY4LTQ0OGItYTE2Yy05ODNmZjBkZTlkN2EiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJRQS5UZXN0QWNjQHhhcGllbnMuaWQiLCJyaCI6IjAuQVNvQVJrVnRyQjU5eDBpd1RnekRneGl1eUxEYUlnNERqYlZJaUxYUDUtV0I4YWtxQUJZLiIsInN1YiI6ImNQVWJwS1NIRHc5Q0h3OE5GeU4yTzBHcGJhSlB5SURtNnBsQV9HeUd4T3ciLCJ0aWQiOiJhYzZkNDU0Ni03ZDFlLTQ4YzctYjA0ZS0wY2MzODMxOGFlYzgiLCJ1dGkiOiJMM09NVzFaRWtVdXFJRHg2dnE0S0FBIiwidmVyIjoiMi4wIn0.VgFWHkFcJEludG2PsAqHiG9G6OnSS_rnZ90Naf6n3YlnWZBLMNLhEQbXf7pmrCMx2Ta4dsnob28ZPuJpX9_Hw7jCm-ebFo6wKvIw8vJw_rPuGPrKbpAbRVZsRjm_YwrW456xaOdLkF5Utm69U4QvW2qxFd2sI30DoHgUZPzkz0LALJcBBrlXgxXw0oqvV3KITDIzqe8hzC7Z-czQP5bJ2_rHe8Gxc9OaHQlmkoPjrvAg2NTdag0MNpfiEbiV2lMpzoXFaX035Hd2JbleGNikeUFq8ZT_a_Vo6ruI-3yHUuTsKfDy13BOZjW8r56KeFI-8kco0h1N4yLMR5oq9KMwHA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"GET ALL SR\",\"Query\":{\"Skip\":0,\"Take\":1,\"Orders\":[]}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev-api.interport.co.id//lintas-sr-request/sr",
+					"protocol": "https",
+					"host": [
+						"dev-api",
+						"interport",
+						"co",
+						"id"
+					],
+					"path": [
+						"",
+						"lintas-sr-request",
+						"sr"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sr-filter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 10000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "user",
+						"value": "{\"ID\":446,\"UserTypeID\":1,\"RoleID\":31,\"Name\":\"QA Test Account\",\"Email\":\"QA.TestAcc@xapiens.id\",\"Address\":\"Jakarta\",\"Phone\":\"082111\",\"Password\":\"\",\"Company\":\"PT Xapiens Teknologi Indonesia\",\"Title\":\"Control Room/Planner\",\"Status\":\"ACTIVE\",\"IsActive\":true,\"BusinessPartnerID\":0,\"CreatedBy\":285,\"CreatedAt\":\"2021-07-14T02:56:21.17464Z\",\"ModifiedBy\":1,\"UpdatedAt\":\"2021-08-10T02:02:38.016892Z\",\"CompanyID\":0,\"SupplierNo\":\"\",\"UserTypeCode\":\"Internal\",\"RoleCode\":\"\",\"RowNo\":0,\"UserLocations\":null,\"CompanySapCustomerNo\":\"\",\"UserCompany\":{\"ID\":0,\"Label\":\"\"}}",
+						"type": "text"
+					},
+					{
+						"key": "email",
+						"value": "QA.TestAcc@xapiens.id",
+						"type": "text"
+					},
+					{
+						"key": "location",
+						"value": "[{\"id\":4,\"description\":\"Marunda\"},{\"id\":5,\"description\":\"Balikpapan\"},{\"id\":6,\"description\":\"Kariangau\"},{\"id\":7,\"description\":\"Sorong\"},{\"id\":8,\"description\":\"Surabaya\"},{\"id\":3,\"description\":\"Gresik\"}]",
+						"type": "text"
+					},
+					{
+						"key": "token-auth",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Imwzc1EtNTBjQ0g0eEJWWkxIVEd3blNSNzY4MCJ9.eyJhdWQiOiIwZTIyZGFiMC04ZDAzLTQ4YjUtODhiNS1jZmU3ZTU4MWYxYTkiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYWM2ZDQ1NDYtN2QxZS00OGM3LWIwNGUtMGNjMzgzMThhZWM4L3YyLjAiLCJpYXQiOjE2MzMzMzkxNzQsIm5iZiI6MTYzMzMzOTE3NCwiZXhwIjoxNjMzMzQzMDc0LCJuYW1lIjoiUUEgVGVzdCBBY2NvdW50Iiwibm9uY2UiOiI4ZWFkZTEyNi1kZWU0LTQyNDctOGU2NC0yZDgwMWI0ZjU1YWEiLCJvaWQiOiI1Mjk3NTc3Mi00NjY4LTQ0OGItYTE2Yy05ODNmZjBkZTlkN2EiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJRQS5UZXN0QWNjQHhhcGllbnMuaWQiLCJyaCI6IjAuQVNvQVJrVnRyQjU5eDBpd1RnekRneGl1eUxEYUlnNERqYlZJaUxYUDUtV0I4YWtxQUJZLiIsInN1YiI6ImNQVWJwS1NIRHc5Q0h3OE5GeU4yTzBHcGJhSlB5SURtNnBsQV9HeUd4T3ciLCJ0aWQiOiJhYzZkNDU0Ni03ZDFlLTQ4YzctYjA0ZS0wY2MzODMxOGFlYzgiLCJ1dGkiOiJMM09NVzFaRWtVdXFJRHg2dnE0S0FBIiwidmVyIjoiMi4wIn0.VgFWHkFcJEludG2PsAqHiG9G6OnSS_rnZ90Naf6n3YlnWZBLMNLhEQbXf7pmrCMx2Ta4dsnob28ZPuJpX9_Hw7jCm-ebFo6wKvIw8vJw_rPuGPrKbpAbRVZsRjm_YwrW456xaOdLkF5Utm69U4QvW2qxFd2sI30DoHgUZPzkz0LALJcBBrlXgxXw0oqvV3KITDIzqe8hzC7Z-czQP5bJ2_rHe8Gxc9OaHQlmkoPjrvAg2NTdag0MNpfiEbiV2lMpzoXFaX035Hd2JbleGNikeUFq8ZT_a_Vo6ruI-3yHUuTsKfDy13BOZjW8r56KeFI-8kco0h1N4yLMR5oq9KMwHA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"GET ALL SR\",\"Query\":{\"Skip\":0,\"Take\":1,\"Filters\":[{\"Field\":\"sr_no\",\"Type\":\"text\",\"Value\":\"SR0062109142\"}],\"Orders\":[]}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev-api.interport.co.id//lintas-sr-request/sr",
+					"protocol": "https",
+					"host": [
+						"dev-api",
+						"interport",
+						"co",
+						"id"
+					],
+					"path": [
+						"",
+						"lintas-sr-request",
+						"sr"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sr-orders",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 10000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "user",
+						"value": "{\"ID\":446,\"UserTypeID\":1,\"RoleID\":31,\"Name\":\"QA Test Account\",\"Email\":\"QA.TestAcc@xapiens.id\",\"Address\":\"Jakarta\",\"Phone\":\"082111\",\"Password\":\"\",\"Company\":\"PT Xapiens Teknologi Indonesia\",\"Title\":\"Control Room/Planner\",\"Status\":\"ACTIVE\",\"IsActive\":true,\"BusinessPartnerID\":0,\"CreatedBy\":285,\"CreatedAt\":\"2021-07-14T02:56:21.17464Z\",\"ModifiedBy\":1,\"UpdatedAt\":\"2021-08-10T02:02:38.016892Z\",\"CompanyID\":0,\"SupplierNo\":\"\",\"UserTypeCode\":\"Internal\",\"RoleCode\":\"\",\"RowNo\":0,\"UserLocations\":null,\"CompanySapCustomerNo\":\"\",\"UserCompany\":{\"ID\":0,\"Label\":\"\"}}",
+						"type": "text"
+					},
+					{
+						"key": "email",
+						"value": "QA.TestAcc@xapiens.id",
+						"type": "text"
+					},
+					{
+						"key": "location",
+						"value": "[{\"id\":4,\"description\":\"Marunda\"},{\"id\":5,\"description\":\"Balikpapan\"},{\"id\":6,\"description\":\"Kariangau\"},{\"id\":7,\"description\":\"Sorong\"},{\"id\":8,\"description\":\"Surabaya\"},{\"id\":3,\"description\":\"Gresik\"}]",
+						"type": "text"
+					},
+					{
+						"key": "token-auth",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Imwzc1EtNTBjQ0g0eEJWWkxIVEd3blNSNzY4MCJ9.eyJhdWQiOiIwZTIyZGFiMC04ZDAzLTQ4YjUtODhiNS1jZmU3ZTU4MWYxYTkiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYWM2ZDQ1NDYtN2QxZS00OGM3LWIwNGUtMGNjMzgzMThhZWM4L3YyLjAiLCJpYXQiOjE2MzMzMzkxNzQsIm5iZiI6MTYzMzMzOTE3NCwiZXhwIjoxNjMzMzQzMDc0LCJuYW1lIjoiUUEgVGVzdCBBY2NvdW50Iiwibm9uY2UiOiI4ZWFkZTEyNi1kZWU0LTQyNDctOGU2NC0yZDgwMWI0ZjU1YWEiLCJvaWQiOiI1Mjk3NTc3Mi00NjY4LTQ0OGItYTE2Yy05ODNmZjBkZTlkN2EiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJRQS5UZXN0QWNjQHhhcGllbnMuaWQiLCJyaCI6IjAuQVNvQVJrVnRyQjU5eDBpd1RnekRneGl1eUxEYUlnNERqYlZJaUxYUDUtV0I4YWtxQUJZLiIsInN1YiI6ImNQVWJwS1NIRHc5Q0h3OE5GeU4yTzBHcGJhSlB5SURtNnBsQV9HeUd4T3ciLCJ0aWQiOiJhYzZkNDU0Ni03ZDFlLTQ4YzctYjA0ZS0wY2MzODMxOGFlYzgiLCJ1dGkiOiJMM09NVzFaRWtVdXFJRHg2dnE0S0FBIiwidmVyIjoiMi4wIn0.VgFWHkFcJEludG2PsAqHiG9G6OnSS_rnZ90Naf6n3YlnWZBLMNLhEQbXf7pmrCMx2Ta4dsnob28ZPuJpX9_Hw7jCm-ebFo6wKvIw8vJw_rPuGPrKbpAbRVZsRjm_YwrW456xaOdLkF5Utm69U4QvW2qxFd2sI30DoHgUZPzkz0LALJcBBrlXgxXw0oqvV3KITDIzqe8hzC7Z-czQP5bJ2_rHe8Gxc9OaHQlmkoPjrvAg2NTdag0MNpfiEbiV2lMpzoXFaX035Hd2JbleGNikeUFq8ZT_a_Vo6ruI-3yHUuTsKfDy13BOZjW8r56KeFI-8kco0h1N4yLMR5oq9KMwHA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"GET ALL SR\",\"Query\":{\"Skip\":0,\"Take\":1,\"Filters\":[{\"Field\":\"sr_no\",\"Type\":\"text\",\"Value\":\"SR0062109142\"}],\"Orders\":[{\"field\":\"sr_no\",\"dir\":\"asc\"}]}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev-api.interport.co.id//lintas-sr-request/sr",
+					"protocol": "https",
+					"host": [
+						"dev-api",
+						"interport",
+						"co",
+						"id"
+					],
+					"path": [
+						"",
+						"lintas-sr-request",
+						"sr"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sr-access",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 10000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "user",
+						"value": "{\"ID\":446,\"UserTypeID\":1,\"RoleID\":31,\"Name\":\"QA Test Account\",\"Email\":\"QA.TestAcc@xapiens.id\",\"Address\":\"Jakarta\",\"Phone\":\"082111\",\"Password\":\"\",\"Company\":\"PT Xapiens Teknologi Indonesia\",\"Title\":\"Control Room/Planner\",\"Status\":\"ACTIVE\",\"IsActive\":true,\"BusinessPartnerID\":0,\"CreatedBy\":285,\"CreatedAt\":\"2021-07-14T02:56:21.17464Z\",\"ModifiedBy\":1,\"UpdatedAt\":\"2021-08-10T02:02:38.016892Z\",\"CompanyID\":0,\"SupplierNo\":\"\",\"UserTypeCode\":\"Internal\",\"RoleCode\":\"\",\"RowNo\":0,\"UserLocations\":null,\"CompanySapCustomerNo\":\"\",\"UserCompany\":{\"ID\":0,\"Label\":\"\"}}",
+						"type": "text"
+					},
+					{
+						"key": "email",
+						"value": "QA.TestAcc@xapiens.id",
+						"type": "text"
+					},
+					{
+						"key": "location",
+						"value": "[{\"id\":4,\"description\":\"Marunda\"},{\"id\":5,\"description\":\"Balikpapan\"},{\"id\":6,\"description\":\"Kariangau\"},{\"id\":7,\"description\":\"Sorong\"},{\"id\":8,\"description\":\"Surabaya\"},{\"id\":3,\"description\":\"Gresik\"}]",
+						"type": "text"
+					},
+					{
+						"key": "token-auth",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Imwzc1EtNTBjQ0g0eEJWWkxIVEd3blNSNzY4MCJ9.eyJhdWQiOiIwZTIyZGFiMC04ZDAzLTQ4YjUtODhiNS1jZmU3ZTU4MWYxYTkiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYWM2ZDQ1NDYtN2QxZS00OGM3LWIwNGUtMGNjMzgzMThhZWM4L3YyLjAiLCJpYXQiOjE2MzMzMzkxNzQsIm5iZiI6MTYzMzMzOTE3NCwiZXhwIjoxNjMzMzQzMDc0LCJuYW1lIjoiUUEgVGVzdCBBY2NvdW50Iiwibm9uY2UiOiI4ZWFkZTEyNi1kZWU0LTQyNDctOGU2NC0yZDgwMWI0ZjU1YWEiLCJvaWQiOiI1Mjk3NTc3Mi00NjY4LTQ0OGItYTE2Yy05ODNmZjBkZTlkN2EiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJRQS5UZXN0QWNjQHhhcGllbnMuaWQiLCJyaCI6IjAuQVNvQVJrVnRyQjU5eDBpd1RnekRneGl1eUxEYUlnNERqYlZJaUxYUDUtV0I4YWtxQUJZLiIsInN1YiI6ImNQVWJwS1NIRHc5Q0h3OE5GeU4yTzBHcGJhSlB5SURtNnBsQV9HeUd4T3ciLCJ0aWQiOiJhYzZkNDU0Ni03ZDFlLTQ4YzctYjA0ZS0wY2MzODMxOGFlYzgiLCJ1dGkiOiJMM09NVzFaRWtVdXFJRHg2dnE0S0FBIiwidmVyIjoiMi4wIn0.VgFWHkFcJEludG2PsAqHiG9G6OnSS_rnZ90Naf6n3YlnWZBLMNLhEQbXf7pmrCMx2Ta4dsnob28ZPuJpX9_Hw7jCm-ebFo6wKvIw8vJw_rPuGPrKbpAbRVZsRjm_YwrW456xaOdLkF5Utm69U4QvW2qxFd2sI30DoHgUZPzkz0LALJcBBrlXgxXw0oqvV3KITDIzqe8hzC7Z-czQP5bJ2_rHe8Gxc9OaHQlmkoPjrvAg2NTdag0MNpfiEbiV2lMpzoXFaX035Hd2JbleGNikeUFq8ZT_a_Vo6ruI-3yHUuTsKfDy13BOZjW8r56KeFI-8kco0h1N4yLMR5oq9KMwHA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"GET DETAIL SR BY NO\",\"data\":{\"SR_No\":\"SR0062109142\"}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev-api.interport.co.id//lintas-sr-request/sr",
+					"protocol": "https",
+					"host": [
+						"dev-api",
+						"interport",
+						"co",
+						"id"
+					],
+					"path": [
+						"",
+						"lintas-sr-request",
+						"sr"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "client",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 10000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "email",
+						"value": "QA.TestAcc@xapiens.id",
+						"type": "text"
+					},
+					{
+						"key": "location",
+						"value": "[{\"id\":4,\"description\":\"Marunda\"},{\"id\":5,\"description\":\"Balikpapan\"},{\"id\":6,\"description\":\"Kariangau\"},{\"id\":7,\"description\":\"Sorong\"},{\"id\":8,\"description\":\"Surabaya\"},{\"id\":3,\"description\":\"Gresik\"}]",
+						"type": "text"
+					},
+					{
+						"key": "token-auth",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Imwzc1EtNTBjQ0g0eEJWWkxIVEd3blNSNzY4MCJ9.eyJhdWQiOiIwZTIyZGFiMC04ZDAzLTQ4YjUtODhiNS1jZmU3ZTU4MWYxYTkiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYWM2ZDQ1NDYtN2QxZS00OGM3LWIwNGUtMGNjMzgzMThhZWM4L3YyLjAiLCJpYXQiOjE2MzMzMzkxNzQsIm5iZiI6MTYzMzMzOTE3NCwiZXhwIjoxNjMzMzQzMDc0LCJuYW1lIjoiUUEgVGVzdCBBY2NvdW50Iiwibm9uY2UiOiI4ZWFkZTEyNi1kZWU0LTQyNDctOGU2NC0yZDgwMWI0ZjU1YWEiLCJvaWQiOiI1Mjk3NTc3Mi00NjY4LTQ0OGItYTE2Yy05ODNmZjBkZTlkN2EiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJRQS5UZXN0QWNjQHhhcGllbnMuaWQiLCJyaCI6IjAuQVNvQVJrVnRyQjU5eDBpd1RnekRneGl1eUxEYUlnNERqYlZJaUxYUDUtV0I4YWtxQUJZLiIsInN1YiI6ImNQVWJwS1NIRHc5Q0h3OE5GeU4yTzBHcGJhSlB5SURtNnBsQV9HeUd4T3ciLCJ0aWQiOiJhYzZkNDU0Ni03ZDFlLTQ4YzctYjA0ZS0wY2MzODMxOGFlYzgiLCJ1dGkiOiJMM09NVzFaRWtVdXFJRHg2dnE0S0FBIiwidmVyIjoiMi4wIn0.VgFWHkFcJEludG2PsAqHiG9G6OnSS_rnZ90Naf6n3YlnWZBLMNLhEQbXf7pmrCMx2Ta4dsnob28ZPuJpX9_Hw7jCm-ebFo6wKvIw8vJw_rPuGPrKbpAbRVZsRjm_YwrW456xaOdLkF5Utm69U4QvW2qxFd2sI30DoHgUZPzkz0LALJcBBrlXgxXw0oqvV3KITDIzqe8hzC7Z-czQP5bJ2_rHe8Gxc9OaHQlmkoPjrvAg2NTdag0MNpfiEbiV2lMpzoXFaX035Hd2JbleGNikeUFq8ZT_a_Vo6ruI-3yHUuTsKfDy13BOZjW8r56KeFI-8kco0h1N4yLMR5oq9KMwHA",
+						"type": "text"
+					},
+					{
+						"key": "user",
+						"value": "{\"ID\":446,\"UserTypeID\":1,\"RoleID\":31,\"Name\":\"QA Test Account\",\"Email\":\"QA.TestAcc@xapiens.id\",\"Address\":\"Jakarta\",\"Phone\":\"082111\",\"Password\":\"\",\"Company\":\"PT Xapiens Teknologi Indonesia\",\"Title\":\"Control Room/Planner\",\"Status\":\"ACTIVE\",\"IsActive\":true,\"BusinessPartnerID\":0,\"CreatedBy\":285,\"CreatedAt\":\"2021-07-14T02:56:21.17464Z\",\"ModifiedBy\":1,\"UpdatedAt\":\"2021-08-10T02:02:38.016892Z\",\"CompanyID\":0,\"SupplierNo\":\"\",\"UserTypeCode\":\"Internal\",\"RoleCode\":\"\",\"RowNo\":0,\"UserLocations\":null,\"CompanySapCustomerNo\":\"\",\"UserCompany\":{\"ID\":0,\"Label\":\"\"}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"Action\":\"GET_ALL\",\"Query\":{\"Filters\":[{\"field\":\"client.is_active\",\"value\":\"true\",\"type\":\"bool\"}],\"Order\":\"company_code ASC\",\"Skip\":0,\"Take\":1}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev-api.interport.co.id//auth/client",
+					"protocol": "https",
+					"host": [
+						"dev-api",
+						"interport",
+						"co",
+						"id"
+					],
+					"path": [
+						"",
+						"auth",
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "master-enum-priority",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 10000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "email",
+						"value": "QA.TestAcc@xapiens.id",
+						"type": "text"
+					},
+					{
+						"key": "location",
+						"value": "[{\"id\":4,\"description\":\"Marunda\"},{\"id\":5,\"description\":\"Balikpapan\"},{\"id\":6,\"description\":\"Kariangau\"},{\"id\":7,\"description\":\"Sorong\"},{\"id\":8,\"description\":\"Surabaya\"},{\"id\":3,\"description\":\"Gresik\"}]",
+						"type": "text"
+					},
+					{
+						"key": "token-auth",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Imwzc1EtNTBjQ0g0eEJWWkxIVEd3blNSNzY4MCJ9.eyJhdWQiOiIwZTIyZGFiMC04ZDAzLTQ4YjUtODhiNS1jZmU3ZTU4MWYxYTkiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYWM2ZDQ1NDYtN2QxZS00OGM3LWIwNGUtMGNjMzgzMThhZWM4L3YyLjAiLCJpYXQiOjE2MzMzMzkxNzQsIm5iZiI6MTYzMzMzOTE3NCwiZXhwIjoxNjMzMzQzMDc0LCJuYW1lIjoiUUEgVGVzdCBBY2NvdW50Iiwibm9uY2UiOiI4ZWFkZTEyNi1kZWU0LTQyNDctOGU2NC0yZDgwMWI0ZjU1YWEiLCJvaWQiOiI1Mjk3NTc3Mi00NjY4LTQ0OGItYTE2Yy05ODNmZjBkZTlkN2EiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJRQS5UZXN0QWNjQHhhcGllbnMuaWQiLCJyaCI6IjAuQVNvQVJrVnRyQjU5eDBpd1RnekRneGl1eUxEYUlnNERqYlZJaUxYUDUtV0I4YWtxQUJZLiIsInN1YiI6ImNQVWJwS1NIRHc5Q0h3OE5GeU4yTzBHcGJhSlB5SURtNnBsQV9HeUd4T3ciLCJ0aWQiOiJhYzZkNDU0Ni03ZDFlLTQ4YzctYjA0ZS0wY2MzODMxOGFlYzgiLCJ1dGkiOiJMM09NVzFaRWtVdXFJRHg2dnE0S0FBIiwidmVyIjoiMi4wIn0.VgFWHkFcJEludG2PsAqHiG9G6OnSS_rnZ90Naf6n3YlnWZBLMNLhEQbXf7pmrCMx2Ta4dsnob28ZPuJpX9_Hw7jCm-ebFo6wKvIw8vJw_rPuGPrKbpAbRVZsRjm_YwrW456xaOdLkF5Utm69U4QvW2qxFd2sI30DoHgUZPzkz0LALJcBBrlXgxXw0oqvV3KITDIzqe8hzC7Z-czQP5bJ2_rHe8Gxc9OaHQlmkoPjrvAg2NTdag0MNpfiEbiV2lMpzoXFaX035Hd2JbleGNikeUFq8ZT_a_Vo6ruI-3yHUuTsKfDy13BOZjW8r56KeFI-8kco0h1N4yLMR5oq9KMwHA",
+						"type": "text"
+					},
+					{
+						"key": "user",
+						"value": "{\"ID\":446,\"UserTypeID\":1,\"RoleID\":31,\"Name\":\"QA Test Account\",\"Email\":\"QA.TestAcc@xapiens.id\",\"Address\":\"Jakarta\",\"Phone\":\"082111\",\"Password\":\"\",\"Company\":\"PT Xapiens Teknologi Indonesia\",\"Title\":\"Control Room/Planner\",\"Status\":\"ACTIVE\",\"IsActive\":true,\"BusinessPartnerID\":0,\"CreatedBy\":285,\"CreatedAt\":\"2021-07-14T02:56:21.17464Z\",\"ModifiedBy\":1,\"UpdatedAt\":\"2021-08-10T02:02:38.016892Z\",\"CompanyID\":0,\"SupplierNo\":\"\",\"UserTypeCode\":\"Internal\",\"RoleCode\":\"\",\"RowNo\":0,\"UserLocations\":null,\"CompanySapCustomerNo\":\"\",\"UserCompany\":{\"ID\":0,\"Label\":\"\"}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"GET_ALL_MASTER_ENUM\",\"query\":{\"Skip\":0,\"Take\":1000,\"Filters\":[{\"type\":\"text\",\"field\":\"type\",\"value\":\"priority\"}],\"Orders\":[]}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev-api.interport.co.id//lintas-sr-master-data/master-enum",
+					"protocol": "https",
+					"host": [
+						"dev-api",
+						"interport",
+						"co",
+						"id"
+					],
+					"path": [
+						"",
+						"lintas-sr-master-data",
+						"master-enum"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "master-enum-file_type",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 10000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "email",
+						"value": "QA.TestAcc@xapiens.id",
+						"type": "text"
+					},
+					{
+						"key": "location",
+						"value": "[{\"id\":4,\"description\":\"Marunda\"},{\"id\":5,\"description\":\"Balikpapan\"},{\"id\":6,\"description\":\"Kariangau\"},{\"id\":7,\"description\":\"Sorong\"},{\"id\":8,\"description\":\"Surabaya\"},{\"id\":3,\"description\":\"Gresik\"}]",
+						"type": "text"
+					},
+					{
+						"key": "token-auth",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Imwzc1EtNTBjQ0g0eEJWWkxIVEd3blNSNzY4MCJ9.eyJhdWQiOiIwZTIyZGFiMC04ZDAzLTQ4YjUtODhiNS1jZmU3ZTU4MWYxYTkiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYWM2ZDQ1NDYtN2QxZS00OGM3LWIwNGUtMGNjMzgzMThhZWM4L3YyLjAiLCJpYXQiOjE2MzMzMzkxNzQsIm5iZiI6MTYzMzMzOTE3NCwiZXhwIjoxNjMzMzQzMDc0LCJuYW1lIjoiUUEgVGVzdCBBY2NvdW50Iiwibm9uY2UiOiI4ZWFkZTEyNi1kZWU0LTQyNDctOGU2NC0yZDgwMWI0ZjU1YWEiLCJvaWQiOiI1Mjk3NTc3Mi00NjY4LTQ0OGItYTE2Yy05ODNmZjBkZTlkN2EiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJRQS5UZXN0QWNjQHhhcGllbnMuaWQiLCJyaCI6IjAuQVNvQVJrVnRyQjU5eDBpd1RnekRneGl1eUxEYUlnNERqYlZJaUxYUDUtV0I4YWtxQUJZLiIsInN1YiI6ImNQVWJwS1NIRHc5Q0h3OE5GeU4yTzBHcGJhSlB5SURtNnBsQV9HeUd4T3ciLCJ0aWQiOiJhYzZkNDU0Ni03ZDFlLTQ4YzctYjA0ZS0wY2MzODMxOGFlYzgiLCJ1dGkiOiJMM09NVzFaRWtVdXFJRHg2dnE0S0FBIiwidmVyIjoiMi4wIn0.VgFWHkFcJEludG2PsAqHiG9G6OnSS_rnZ90Naf6n3YlnWZBLMNLhEQbXf7pmrCMx2Ta4dsnob28ZPuJpX9_Hw7jCm-ebFo6wKvIw8vJw_rPuGPrKbpAbRVZsRjm_YwrW456xaOdLkF5Utm69U4QvW2qxFd2sI30DoHgUZPzkz0LALJcBBrlXgxXw0oqvV3KITDIzqe8hzC7Z-czQP5bJ2_rHe8Gxc9OaHQlmkoPjrvAg2NTdag0MNpfiEbiV2lMpzoXFaX035Hd2JbleGNikeUFq8ZT_a_Vo6ruI-3yHUuTsKfDy13BOZjW8r56KeFI-8kco0h1N4yLMR5oq9KMwHA",
+						"type": "text"
+					},
+					{
+						"key": "user",
+						"value": "{\"ID\":446,\"UserTypeID\":1,\"RoleID\":31,\"Name\":\"QA Test Account\",\"Email\":\"QA.TestAcc@xapiens.id\",\"Address\":\"Jakarta\",\"Phone\":\"082111\",\"Password\":\"\",\"Company\":\"PT Xapiens Teknologi Indonesia\",\"Title\":\"Control Room/Planner\",\"Status\":\"ACTIVE\",\"IsActive\":true,\"BusinessPartnerID\":0,\"CreatedBy\":285,\"CreatedAt\":\"2021-07-14T02:56:21.17464Z\",\"ModifiedBy\":1,\"UpdatedAt\":\"2021-08-10T02:02:38.016892Z\",\"CompanyID\":0,\"SupplierNo\":\"\",\"UserTypeCode\":\"Internal\",\"RoleCode\":\"\",\"RowNo\":0,\"UserLocations\":null,\"CompanySapCustomerNo\":\"\",\"UserCompany\":{\"ID\":0,\"Label\":\"\"}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"GET_ALL_MASTER_ENUM\",\"query\":{\"Skip\":0,\"Take\":1000,\"Filters\":[{\"type\":\"text\",\"field\":\"type\",\"value\":\"file_size\"}],\"Orders\":[]}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev-api.interport.co.id//lintas-sr-master-data/master-enum",
+					"protocol": "https",
+					"host": [
+						"dev-api",
+						"interport",
+						"co",
+						"id"
+					],
+					"path": [
+						"",
+						"lintas-sr-master-data",
+						"master-enum"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "master-enum-file_size",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 10000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "email",
+						"value": "QA.TestAcc@xapiens.id",
+						"type": "text"
+					},
+					{
+						"key": "location",
+						"value": "[{\"id\":4,\"description\":\"Marunda\"},{\"id\":5,\"description\":\"Balikpapan\"},{\"id\":6,\"description\":\"Kariangau\"},{\"id\":7,\"description\":\"Sorong\"},{\"id\":8,\"description\":\"Surabaya\"},{\"id\":3,\"description\":\"Gresik\"}]",
+						"type": "text"
+					},
+					{
+						"key": "token-auth",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Imwzc1EtNTBjQ0g0eEJWWkxIVEd3blNSNzY4MCJ9.eyJhdWQiOiIwZTIyZGFiMC04ZDAzLTQ4YjUtODhiNS1jZmU3ZTU4MWYxYTkiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYWM2ZDQ1NDYtN2QxZS00OGM3LWIwNGUtMGNjMzgzMThhZWM4L3YyLjAiLCJpYXQiOjE2MzMzMzkxNzQsIm5iZiI6MTYzMzMzOTE3NCwiZXhwIjoxNjMzMzQzMDc0LCJuYW1lIjoiUUEgVGVzdCBBY2NvdW50Iiwibm9uY2UiOiI4ZWFkZTEyNi1kZWU0LTQyNDctOGU2NC0yZDgwMWI0ZjU1YWEiLCJvaWQiOiI1Mjk3NTc3Mi00NjY4LTQ0OGItYTE2Yy05ODNmZjBkZTlkN2EiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJRQS5UZXN0QWNjQHhhcGllbnMuaWQiLCJyaCI6IjAuQVNvQVJrVnRyQjU5eDBpd1RnekRneGl1eUxEYUlnNERqYlZJaUxYUDUtV0I4YWtxQUJZLiIsInN1YiI6ImNQVWJwS1NIRHc5Q0h3OE5GeU4yTzBHcGJhSlB5SURtNnBsQV9HeUd4T3ciLCJ0aWQiOiJhYzZkNDU0Ni03ZDFlLTQ4YzctYjA0ZS0wY2MzODMxOGFlYzgiLCJ1dGkiOiJMM09NVzFaRWtVdXFJRHg2dnE0S0FBIiwidmVyIjoiMi4wIn0.VgFWHkFcJEludG2PsAqHiG9G6OnSS_rnZ90Naf6n3YlnWZBLMNLhEQbXf7pmrCMx2Ta4dsnob28ZPuJpX9_Hw7jCm-ebFo6wKvIw8vJw_rPuGPrKbpAbRVZsRjm_YwrW456xaOdLkF5Utm69U4QvW2qxFd2sI30DoHgUZPzkz0LALJcBBrlXgxXw0oqvV3KITDIzqe8hzC7Z-czQP5bJ2_rHe8Gxc9OaHQlmkoPjrvAg2NTdag0MNpfiEbiV2lMpzoXFaX035Hd2JbleGNikeUFq8ZT_a_Vo6ruI-3yHUuTsKfDy13BOZjW8r56KeFI-8kco0h1N4yLMR5oq9KMwHA",
+						"type": "text"
+					},
+					{
+						"key": "user",
+						"value": "{\"ID\":446,\"UserTypeID\":1,\"RoleID\":31,\"Name\":\"QA Test Account\",\"Email\":\"QA.TestAcc@xapiens.id\",\"Address\":\"Jakarta\",\"Phone\":\"082111\",\"Password\":\"\",\"Company\":\"PT Xapiens Teknologi Indonesia\",\"Title\":\"Control Room/Planner\",\"Status\":\"ACTIVE\",\"IsActive\":true,\"BusinessPartnerID\":0,\"CreatedBy\":285,\"CreatedAt\":\"2021-07-14T02:56:21.17464Z\",\"ModifiedBy\":1,\"UpdatedAt\":\"2021-08-10T02:02:38.016892Z\",\"CompanyID\":0,\"SupplierNo\":\"\",\"UserTypeCode\":\"Internal\",\"RoleCode\":\"\",\"RowNo\":0,\"UserLocations\":null,\"CompanySapCustomerNo\":\"\",\"UserCompany\":{\"ID\":0,\"Label\":\"\"}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"GET_ALL_MASTER_ENUM\",\"query\":{\"Skip\":0,\"Take\":1000,\"Filters\":[{\"type\":\"text\",\"field\":\"type\",\"value\":\"file_type\"}],\"Orders\":[]}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev-api.interport.co.id//lintas-sr-master-data/master-enum",
+					"protocol": "https",
+					"host": [
+						"dev-api",
+						"interport",
+						"co",
+						"id"
+					],
+					"path": [
+						"",
+						"lintas-sr-master-data",
+						"master-enum"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sr-draft",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 10000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "user",
+						"value": "{\"ID\":446,\"UserTypeID\":1,\"RoleID\":31,\"Name\":\"QA Test Account\",\"Email\":\"QA.TestAcc@xapiens.id\",\"Address\":\"Jakarta\",\"Phone\":\"082111\",\"Password\":\"\",\"Company\":\"PT Xapiens Teknologi Indonesia\",\"Title\":\"Control Room/Planner\",\"Status\":\"ACTIVE\",\"IsActive\":true,\"BusinessPartnerID\":0,\"CreatedBy\":285,\"CreatedAt\":\"2021-07-14T02:56:21.17464Z\",\"ModifiedBy\":1,\"UpdatedAt\":\"2021-08-10T02:02:38.016892Z\",\"CompanyID\":0,\"SupplierNo\":\"\",\"UserTypeCode\":\"Internal\",\"RoleCode\":\"\",\"RowNo\":0,\"UserLocations\":null,\"CompanySapCustomerNo\":\"\",\"UserCompany\":{\"ID\":0,\"Label\":\"\"}}",
+						"type": "text"
+					},
+					{
+						"key": "email",
+						"value": "QA.TestAcc@xapiens.id",
+						"type": "text"
+					},
+					{
+						"key": "location",
+						"value": "[{\"id\":4,\"description\":\"Marunda\"},{\"id\":5,\"description\":\"Balikpapan\"},{\"id\":6,\"description\":\"Kariangau\"},{\"id\":7,\"description\":\"Sorong\"},{\"id\":8,\"description\":\"Surabaya\"},{\"id\":3,\"description\":\"Gresik\"}]",
+						"type": "text"
+					},
+					{
+						"key": "token-auth",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Imwzc1EtNTBjQ0g0eEJWWkxIVEd3blNSNzY4MCJ9.eyJhdWQiOiIwZTIyZGFiMC04ZDAzLTQ4YjUtODhiNS1jZmU3ZTU4MWYxYTkiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYWM2ZDQ1NDYtN2QxZS00OGM3LWIwNGUtMGNjMzgzMThhZWM4L3YyLjAiLCJpYXQiOjE2MzMzMzkxNzQsIm5iZiI6MTYzMzMzOTE3NCwiZXhwIjoxNjMzMzQzMDc0LCJuYW1lIjoiUUEgVGVzdCBBY2NvdW50Iiwibm9uY2UiOiI4ZWFkZTEyNi1kZWU0LTQyNDctOGU2NC0yZDgwMWI0ZjU1YWEiLCJvaWQiOiI1Mjk3NTc3Mi00NjY4LTQ0OGItYTE2Yy05ODNmZjBkZTlkN2EiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJRQS5UZXN0QWNjQHhhcGllbnMuaWQiLCJyaCI6IjAuQVNvQVJrVnRyQjU5eDBpd1RnekRneGl1eUxEYUlnNERqYlZJaUxYUDUtV0I4YWtxQUJZLiIsInN1YiI6ImNQVWJwS1NIRHc5Q0h3OE5GeU4yTzBHcGJhSlB5SURtNnBsQV9HeUd4T3ciLCJ0aWQiOiJhYzZkNDU0Ni03ZDFlLTQ4YzctYjA0ZS0wY2MzODMxOGFlYzgiLCJ1dGkiOiJMM09NVzFaRWtVdXFJRHg2dnE0S0FBIiwidmVyIjoiMi4wIn0.VgFWHkFcJEludG2PsAqHiG9G6OnSS_rnZ90Naf6n3YlnWZBLMNLhEQbXf7pmrCMx2Ta4dsnob28ZPuJpX9_Hw7jCm-ebFo6wKvIw8vJw_rPuGPrKbpAbRVZsRjm_YwrW456xaOdLkF5Utm69U4QvW2qxFd2sI30DoHgUZPzkz0LALJcBBrlXgxXw0oqvV3KITDIzqe8hzC7Z-czQP5bJ2_rHe8Gxc9OaHQlmkoPjrvAg2NTdag0MNpfiEbiV2lMpzoXFaX035Hd2JbleGNikeUFq8ZT_a_Vo6ruI-3yHUuTsKfDy13BOZjW8r56KeFI-8kco0h1N4yLMR5oq9KMwHA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"INSERT SR\",\"data\":{\"Location_Id\":6,\"Priority_Code\":\"\",\"Estimate_Start_Time\":\"2021-10-04T08:50:49.449Z\",\"Estimate_Finish_Time\":\"2021-10-05T04:00:00.000Z\",\"remarks\":\"\",\"sr_status\":\"Draft\",\"Estimate_Duration_Time\":1150,\"sr_attachment\":[],\"created_date\":\"2021-10-04T08:58:53.006Z\",\"modified_date\":\"2021-10-04T08:58:53.006Z\"}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev-api.interport.co.id//lintas-sr-request/sr",
+					"protocol": "https",
+					"host": [
+						"dev-api",
+						"interport",
+						"co",
+						"id"
+					],
+					"path": [
+						"",
+						"lintas-sr-request",
+						"sr"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sr-submit",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 10000ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(10000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "user",
+						"value": "{\"ID\":446,\"UserTypeID\":1,\"RoleID\":31,\"Name\":\"QA Test Account\",\"Email\":\"QA.TestAcc@xapiens.id\",\"Address\":\"Jakarta\",\"Phone\":\"082111\",\"Password\":\"\",\"Company\":\"PT Xapiens Teknologi Indonesia\",\"Title\":\"Control Room/Planner\",\"Status\":\"ACTIVE\",\"IsActive\":true,\"BusinessPartnerID\":0,\"CreatedBy\":285,\"CreatedAt\":\"2021-07-14T02:56:21.17464Z\",\"ModifiedBy\":1,\"UpdatedAt\":\"2021-08-10T02:02:38.016892Z\",\"CompanyID\":0,\"SupplierNo\":\"\",\"UserTypeCode\":\"Internal\",\"RoleCode\":\"\",\"RowNo\":0,\"UserLocations\":null,\"CompanySapCustomerNo\":\"\",\"UserCompany\":{\"ID\":0,\"Label\":\"\"}}",
+						"type": "text"
+					},
+					{
+						"key": "email",
+						"value": "QA.TestAcc@xapiens.id",
+						"type": "text"
+					},
+					{
+						"key": "location",
+						"value": "[{\"id\":4,\"description\":\"Marunda\"},{\"id\":5,\"description\":\"Balikpapan\"},{\"id\":6,\"description\":\"Kariangau\"},{\"id\":7,\"description\":\"Sorong\"},{\"id\":8,\"description\":\"Surabaya\"},{\"id\":3,\"description\":\"Gresik\"}]",
+						"type": "text"
+					},
+					{
+						"key": "token-auth",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Imwzc1EtNTBjQ0g0eEJWWkxIVEd3blNSNzY4MCJ9.eyJhdWQiOiIwZTIyZGFiMC04ZDAzLTQ4YjUtODhiNS1jZmU3ZTU4MWYxYTkiLCJpc3MiOiJodHRwczovL2xvZ2luLm1pY3Jvc29mdG9ubGluZS5jb20vYWM2ZDQ1NDYtN2QxZS00OGM3LWIwNGUtMGNjMzgzMThhZWM4L3YyLjAiLCJpYXQiOjE2MzMzMzkxNzQsIm5iZiI6MTYzMzMzOTE3NCwiZXhwIjoxNjMzMzQzMDc0LCJuYW1lIjoiUUEgVGVzdCBBY2NvdW50Iiwibm9uY2UiOiI4ZWFkZTEyNi1kZWU0LTQyNDctOGU2NC0yZDgwMWI0ZjU1YWEiLCJvaWQiOiI1Mjk3NTc3Mi00NjY4LTQ0OGItYTE2Yy05ODNmZjBkZTlkN2EiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJRQS5UZXN0QWNjQHhhcGllbnMuaWQiLCJyaCI6IjAuQVNvQVJrVnRyQjU5eDBpd1RnekRneGl1eUxEYUlnNERqYlZJaUxYUDUtV0I4YWtxQUJZLiIsInN1YiI6ImNQVWJwS1NIRHc5Q0h3OE5GeU4yTzBHcGJhSlB5SURtNnBsQV9HeUd4T3ciLCJ0aWQiOiJhYzZkNDU0Ni03ZDFlLTQ4YzctYjA0ZS0wY2MzODMxOGFlYzgiLCJ1dGkiOiJMM09NVzFaRWtVdXFJRHg2dnE0S0FBIiwidmVyIjoiMi4wIn0.VgFWHkFcJEludG2PsAqHiG9G6OnSS_rnZ90Naf6n3YlnWZBLMNLhEQbXf7pmrCMx2Ta4dsnob28ZPuJpX9_Hw7jCm-ebFo6wKvIw8vJw_rPuGPrKbpAbRVZsRjm_YwrW456xaOdLkF5Utm69U4QvW2qxFd2sI30DoHgUZPzkz0LALJcBBrlXgxXw0oqvV3KITDIzqe8hzC7Z-czQP5bJ2_rHe8Gxc9OaHQlmkoPjrvAg2NTdag0MNpfiEbiV2lMpzoXFaX035Hd2JbleGNikeUFq8ZT_a_Vo6ruI-3yHUuTsKfDy13BOZjW8r56KeFI-8kco0h1N4yLMR5oq9KMwHA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"INSERT SR\",\"data\":{\"Client_Code\":\"0001000470\",\"Location_Id\":6,\"Priority_Code\":\"MEN1\",\"Estimate_Start_Time\":\"2021-10-04T09:00:00.000Z\",\"Estimate_Finish_Time\":\"2021-10-05T04:00:00.000Z\",\"remarks\":\"Testing for API Test\",\"sr_status\":\"Submitted\",\"Estimate_Duration_Time\":1140,\"sr_attachment\":[],\"created_date\":\"2021-10-04T09:04:10.250Z\",\"modified_date\":\"2021-10-04T09:04:10.250Z\"}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev-api.interport.co.id//lintas-sr-request/sr",
+					"protocol": "https",
+					"host": [
+						"dev-api",
+						"interport",
+						"co",
+						"id"
+					],
+					"path": [
+						"",
+						"lintas-sr-request",
+						"sr"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
